@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>FROMI Auto Repair &amp; Maintenance — Legetafo</title>
+<meta name="description" content="FROMI is a professional automotive repair and maintenance workshop in Legetafo, open 24 hours. Diagnostics, brakes, batteries, A/C, and full-service care for your vehicle." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink-900:#0A1220;
+    --ink-800:#101C30;
+    --ink-700:#182642;
+    --paper:#EFEEE9;
+    --paper-2:#E7E4DB;
+    --card:#FFFFFF;
+    --orange-600:#E8501E;
+    --orange-700:#C43D12;
+    --orange-100:#FCE2D4;
+    --steel-500:#77839A;
+    --steel-300:#AAB3C4;
+    --line:#26344E;
+    --line-light:#DAD6CB;
+    --ink-text:#12192A;
+
+    --font-display:'Oswald', 'Arial Narrow', sans-serif;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    color-scheme: light;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *,*::before,*::after{ box-sizing:inherit; }
+  html{ scroll-behavior:smooth; scroll-padding-top: calc(76px + env(safe-area-inset-top,0px)); }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink-text);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img,svg{ max-width:100%; display:block; }
+
+  a{ color:inherit; text-decoration:none; }
+  button{ font-family:inherit; }
+
+  .container{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  h1,h2,h3,h4{
+    font-family:var(--font-display);
+    font-weight:600;
+    line-height:1.08;
+    margin:0;
+    letter-spacing:0.2px;
+  }
+  p{ margin:0; }
+
+  .skip-link{
+    position:absolute; left:-9999px; top:0;
+    background:var(--orange-600); color:#fff; padding:10px 16px; z-index:200; border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{ left:0; }
+
+  :focus-visible{
+    outline:2.5px solid var(--orange-600);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- Header ---------- */
+  .topbar{
+    background:var(--ink-900);
+    color:var(--steel-300);
+    font-size:13px;
+  }
+  .topbar .container{
+    display:flex; align-items:center; justify-content:space-between;
+    height:38px;
+    gap:16px;
+  }
+  .topbar-left{ display:flex; gap:20px; align-items:center; }
+  .topbar a:hover{ color:#fff; }
+  .topbar-item{ display:flex; align-items:center; gap:6px; white-space:nowrap; }
+  .topbar-hide-mobile{ display:none; }
+  @media (min-width:720px){ .topbar-hide-mobile{ display:flex; } }
+
+  header.site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(10,18,32,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+  }
+  .brand-mark{
+    width:38px; height:38px; flex:none;
+  }
+  .brand small{
+    display:block;
+    font-family:var(--font-body);
+    font-weight:500;
+    font-size:9.5px;
+    letter-spacing:1.6px;
+    color:var(--orange-600);
+    margin-top:1px;
+  }
+
+  nav.main-nav{ display:none; }
+  @media (min-width:960px){
+    nav.main-nav{
+      display:flex; align-items:center; gap:34px;
+    }
+    nav.main-nav a{
+      color:#DCE1EC; font-size:14.5px; font-weight:500;
+      position:relative; padding:6px 0;
+    }
+    nav.main-nav a::after{
+      content:""; position:absolute; left:0; right:100%; bottom:0; height:2px;
+      background:var(--orange-600); transition:right .25s ease;
+    }
+    nav.main-nav a:hover{ color:#fff; }
+    nav.main-nav a:hover::after{ right:0; }
+  }
+
+  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  .call-chip{
+    display:none;
+    align-items:center; gap:8px;
+    color:#fff; font-weight:600; font-size:14px;
+  }
+  @media (min-width:720px){ .call-chip{ display:flex; } }
+  .call-chip svg{ color:var(--orange-600); width:18px; height:18px; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px 22px;
+    font-size:14px; font-weight:600;
+    border-radius:3px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--orange-600); color:#fff; }
+  .btn-primary:hover{ background:var(--orange-700); }
+  .btn-outline-dark{ border-color:#3A4560; color:#fff; background:transparent; }
+  .btn-outline-dark:hover{ border-color:var(--orange-600); }
+  .btn-outline-ink{ border-color:var(--ink-900); color:var(--ink-900); background:transparent; }
+  .btn-outline-ink:hover{ background:var(--ink-900); color:#fff; }
+  .btn-block{ width:100%; }
+  .btn-lg{ padding:15px 30px; font-size:15px; }
+
+  .menu-btn{
+    display:flex; align-items:center; justify-content:center;
+    width:42px; height:42px;
+    background:transparent; border:1.5px solid #3A4560; border-radius:3px;
+    color:#fff;
+  }
+  @media (min-width:960px){ .menu-btn{ display:none; } }
+
+  /* mobile drawer */
+  .mobile-nav{
+    position:fixed; inset:0; z-index:150;
+    background:var(--ink-900);
+    display:flex; flex-direction:column;
+    padding:22px 24px calc(24px + env(safe-area-inset-bottom,0px));
+    transform:translateX(100%);
+    transition:transform .3s ease;
+  }
+  .mobile-nav.open{ transform:translateX(0); }
+  .mobile-nav .top-row{ display:flex; justify-content:flex-end; margin-bottom:30px; }
+  .mobile-nav a.link{
+    color:#EDEFF4; font-family:var(--font-display); font-size:26px; font-weight:600;
+    padding:14px 0; border-bottom:1px solid var(--line);
+  }
+  .mobile-nav .cta-row{ margin-top:auto; display:flex; flex-direction:column; gap:12px; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink-900);
+    color:#fff;
+    overflow:hidden;
+    padding:64px 0 0;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; right:-10%; top:-20%;
+    width:70%; height:140%;
+    background:var(--orange-600);
+    opacity:0.10;
+    transform:rotate(-14deg);
+  }
+  .hero-grid{
+    position:relative;
+    display:grid; grid-template-columns:1fr; gap:30px;
+    align-items:center;
+    padding-bottom:40px;
+  }
+  @media (min-width:900px){
+    .hero-grid{ grid-template-columns:1.1fr 0.9fr; gap:40px; padding-bottom:0; }
+  }
+  .eyebrow-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(232,80,30,0.14);
+    border:1px solid rgba(232,80,30,0.4);
+    color:#FFB799;
+    font-size:12.5px; font-weight:600;
+    padding:7px 14px; border-radius:999px;
+    margin-bottom:20px;
+  }
+  .eyebrow-badge svg{ width:14px; height:14px; }
+  .hero h1{
+    font-size:clamp(36px, 6vw, 60px);
+    color:#fff;
+  }
+  .hero h1 .accent{ color:var(--orange-600); }
+  .hero p.lead{
+    margin-top:20px;
+    font-size:17px; line-height:1.65;
+    color:#B9C1D2;
+    max-width:52ch;
+  }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+  .hero-anim{
+    animation: hero-rise .7s cubic-bezier(.2,.7,.3,1) both;
+  }
+  @keyframes hero-rise{
+    from{ opacity:0; transform:translateY(18px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .hero-illustration{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    animation: hero-rise .8s .1s cubic-bezier(.2,.7,.3,1) both;
+  }
+  .hero-illustration svg{ width:100%; max-width:460px; height:auto; }
+
+  .stat-strip{
+    background:var(--ink-800);
+    border-top:1px solid var(--line);
+  }
+  .stat-strip .container{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:0;
+  }
+  @media (min-width:720px){
+    .stat-strip .container{ grid-template-columns:repeat(5,1fr); }
+  }
+  .stat-item{
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+    padding:28px 10px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat-item:nth-child(2n){ border-right:none; }
+  @media (min-width:720px){
+    .stat-item{ border-bottom:none; border-right:1px solid var(--line); }
+    .stat-item:last-child{ border-right:none; }
+  }
+  .stat-item svg{ width:30px; height:30px; color:var(--orange-600); }
+  .stat-item span{ font-size:13px; font-weight:600; color:#DCE1EC; letter-spacing:.2px; }
+
+  /* ---------- Section shells ---------- */
+  section{ padding:88px 0; }
+  .section-tight{ padding:70px 0; }
+  .on-dark{ background:var(--ink-900); color:#fff; }
+  .on-paper2{ background:var(--paper-2); }
+
+  .kicker{
+    color:var(--orange-600); font-weight:700; font-size:13px; letter-spacing:.4px;
+    margin-bottom:12px; display:block;
+  }
+  .section-head{ max-width:640px; margin-bottom:48px; }
+  .section-head h2{ font-size:clamp(28px,4vw,38px); color:var(--ink-900); }
+  .on-dark .section-head h2{ color:#fff; }
+  .section-head p{ margin-top:16px; font-size:16px; line-height:1.7; color:var(--steel-500); }
+  .on-dark .section-head p{ color:var(--steel-300); }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:1fr; gap:48px; align-items:center;
+  }
+  @media (min-width:900px){ .about-grid{ grid-template-columns:0.95fr 1.05fr; gap:64px; } }
+  .about-art{
+    background:var(--ink-900);
+    border-radius:6px;
+    padding:34px;
+    position:relative;
+  }
+  .about-art svg{ width:100%; height:auto; }
+  .about-badge{
+    position:absolute; left:-18px; bottom:-18px;
+    background:var(--orange-600); color:#fff;
+    border-radius:6px; padding:16px 20px;
+    font-family:var(--font-display); font-size:15px; font-weight:600;
+    box-shadow:0 14px 30px rgba(196,61,18,.35);
+  }
+  .check-list{ list-style:none; margin:26px 0 0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  .check-list li{ display:flex; gap:12px; align-items:flex-start; font-size:15.5px; color:#3A4356; }
+  .check-list svg{ width:20px; height:20px; flex:none; color:var(--orange-600); margin-top:1px; }
+
+  /* ---------- Services ---------- */
+  .service-grid{
+    display:grid; grid-template-columns:1fr; gap:24px;
+  }
+  @media (min-width:640px){ .service-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:1000px){ .service-grid{ grid-template-columns:repeat(3,1fr); } }
+  .service-card{
+    background:var(--card);
+    border:1px solid var(--line-light);
+    border-radius:6px;
+    padding:32px 28px;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 34px rgba(10,18,32,0.10);
+    border-color:transparent;
+  }
+  .service-icon{
+    width:52px; height:52px; border-radius:5px;
+    background:var(--orange-100);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+  }
+  .service-icon svg{ width:26px; height:26px; color:var(--orange-700); }
+  .service-card h3{ font-size:19px; color:var(--ink-900); margin-bottom:10px; }
+  .service-card p{ font-size:14.5px; line-height:1.65; color:var(--steel-500); }
+  .service-card .more{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:18px; font-size:13.5px; font-weight:600; color:var(--orange-700);
+  }
+  .service-card .more svg{ width:14px; height:14px; transition:transform .2s ease; }
+  .service-card:hover .more svg{ transform:translateX(4px); }
+
+  /* ---------- Why choose us ---------- */
+  .feature-grid{
+    display:grid; grid-template-columns:1fr; gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  @media (min-width:720px){ .feature-grid{ grid-template-columns:repeat(2,1fr); } }
+  .feature-item{
+    background:var(--ink-800);
+    padding:28px 30px;
+    display:flex; gap:18px;
+  }
+  .feature-item svg{ width:26px; height:26px; color:var(--orange-600); flex:none; margin-top:2px; }
+  .feature-item h4{ font-family:var(--font-body); font-weight:700; font-size:15.5px; color:#fff; margin-bottom:6px; }
+  .feature-item p{ font-size:14px; color:var(--steel-300); line-height:1.6; }
+
+  /* ---------- Process ---------- */
+  .process-row{
+    display:grid; grid-template-columns:1fr; gap:30px;
+    counter-reset: step;
+  }
+  @media (min-width:900px){ .process-row{ grid-template-columns:repeat(4,1fr); } }
+  .process-step{ position:relative; padding-top:6px; }
+  .process-step::before{
+    counter-increment:step;
+    content: counter(step, decimal-leading-zero);
+    font-family:var(--font-display); font-size:15px; font-weight:600;
+    color:var(--orange-700);
+    display:block; margin-bottom:14px;
+  }
+  .process-step h4{ font-size:17px; color:var(--ink-900); margin-bottom:8px; }
+  .process-step p{ font-size:14.5px; color:var(--steel-500); line-height:1.6; }
+  .process-row .process-step:not(:last-child){
+    border-bottom:1px solid var(--line-light); padding-bottom:26px;
+  }
+  @media (min-width:900px){
+    .process-row .process-step:not(:last-child){
+      border-bottom:none; border-right:1px solid var(--line-light);
+      padding-right:26px; padding-bottom:0;
+    }
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{ display:grid; grid-template-columns:1fr; gap:22px; }
+  @media (min-width:820px){ .testi-grid{ grid-template-columns:repeat(3,1fr); } }
+  .testi-card{
+    background:var(--card); border:1px solid var(--line-light); border-radius:6px;
+    padding:28px; display:flex; flex-direction:column; gap:16px;
+  }
+  .stars{ display:flex; gap:4px; }
+  .stars svg{ width:16px; height:16px; color:#C7CCD6; }
+  .testi-quote{ font-size:15px; color:#3A4356; line-height:1.7; font-style:italic; }
+  .testi-name{ font-size:13.5px; font-weight:700; color:var(--ink-900); }
+  .placeholder-note{
+    margin-top:26px; font-size:13px; color:var(--steel-500);
+    display:flex; align-items:center; gap:8px;
+  }
+  .placeholder-note svg{ width:15px; height:15px; flex:none; color:var(--orange-600); }
+
+  /* ---------- Offer banner ---------- */
+  .offer-banner{
+    position:relative; overflow:hidden;
+    background:var(--ink-900); color:#fff;
+    padding:64px 0;
+  }
+  .offer-banner::before{
+    content:""; position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(135deg, rgba(232,80,30,.10) 0 2px, transparent 2px 34px);
+  }
+  .offer-inner{
+    position:relative;
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:26px;
+  }
+  .offer-text h2{ font-size:clamp(24px,3.4vw,32px); color:#fff; }
+  .offer-text p{ margin-top:10px; color:var(--steel-300); font-size:15px; max-width:46ch; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid; grid-template-columns:1fr; gap:40px;
+  }
+  @media (min-width:960px){ .contact-grid{ grid-template-columns:1.2fr 0.9fr; gap:52px; } }
+  .form-card{
+    background:var(--card); border:1px solid var(--line-light); border-radius:6px;
+    padding:34px;
+  }
+  .form-row{ display:grid; grid-template-columns:1fr; gap:18px; }
+  @media (min-width:560px){ .form-row.two{ grid-template-columns:1fr 1fr; } }
+  .field{ display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
+  .field label{ font-size:13.5px; font-weight:600; color:var(--ink-900); }
+  .field input, .field select, .field textarea{
+    font-family:var(--font-body); font-size:14.5px;
+    padding:12px 14px;
+    border:1.5px solid var(--line-light); border-radius:4px;
+    background:#fff; color:var(--ink-text);
+    transition:border-color .18s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color:var(--orange-600);
+  }
+  .field textarea{ resize:vertical; min-height:100px; }
+  .form-msg{
+    margin-top:16px; padding:14px 16px; border-radius:4px;
+    background:#EAF6EE; color:#1F6B39; font-size:14px; font-weight:500;
+    display:none; align-items:center; gap:10px;
+  }
+  .form-msg.show{ display:flex; }
+  .form-msg svg{ width:18px; height:18px; flex:none; }
+
+  .info-col{ display:flex; flex-direction:column; gap:20px; }
+  .info-card{
+    background:var(--ink-800); border:1px solid var(--line); border-radius:6px;
+    padding:22px 24px; display:flex; gap:16px; align-items:flex-start;
+    color:#fff;
+  }
+  .info-card svg{ width:22px; height:22px; color:var(--orange-600); flex:none; margin-top:2px; }
+  .info-card h4{ font-family:var(--font-body); font-weight:700; font-size:14.5px; margin-bottom:4px; }
+  .info-card p{ font-size:14px; color:var(--steel-300); }
+  .info-card a:hover{ color:#fff; }
+
+  .map-placeholder{
+    border:1.5px dashed var(--line);
+    border-radius:6px;
+    background:var(--ink-800);
+    min-height:180px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+    color:var(--steel-300); text-align:center; padding:24px;
+  }
+  .map-placeholder svg{ width:28px; height:28px; color:var(--orange-600); }
+  .map-placeholder span{ font-size:13px; }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer{ background:#080D18; color:var(--steel-300); padding:64px 0 26px; }
+  .footer-grid{
+    display:grid; grid-template-columns:1fr; gap:40px;
+  }
+  @media (min-width:760px){ .footer-grid{ grid-template-columns:1.3fr 0.7fr 0.7fr 1fr; } }
+  .footer-brand{ display:flex; align-items:center; gap:10px; color:#fff; font-family:var(--font-display); font-size:20px; font-weight:700; margin-bottom:14px; }
+  .footer-brand svg{ width:30px; height:30px; }
+  .footer-col h5{ color:#fff; font-family:var(--font-body); font-weight:700; font-size:13.5px; margin-bottom:16px; letter-spacing:.2px; }
+  .footer-links{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .footer-links a{ font-size:14px; color:var(--steel-300); }
+  .footer-links a:hover{ color:#fff; }
+  .footer-desc{ font-size:14px; line-height:1.7; max-width:34ch; }
+  .social-row{ display:flex; gap:10px; margin-top:20px; }
+  .social-row a{
+    width:36px; height:36px; border-radius:4px;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .18s ease, transform .18s ease;
+  }
+  .social-row a:hover{ border-color:var(--orange-600); transform:translateY(-2px); }
+  .social-row svg{ width:16px; height:16px; color:#DCE1EC; }
+  .footer-bottom{
+    margin-top:48px; padding-top:22px; border-top:1px solid var(--line);
+    display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;
+    font-size:12.5px; color:var(--steel-500);
+  }
+
+  /* ---------- Floating action buttons ---------- */
+  .fab-stack{
+    position:fixed; right:20px; bottom:calc(20px + env(safe-area-inset-bottom,0px));
+    z-index:120; display:flex; flex-direction:column; gap:12px;
+  }
+  .fab{
+    width:52px; height:52px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 22px rgba(0,0,0,.25);
+    transition:transform .18s ease;
+  }
+  .fab:hover{ transform:scale(1.07); }
+  .fab svg{ width:24px; height:24px; }
+  .fab-call{ background:var(--orange-600); color:#fff; }
+  .fab-whatsapp{ background:#25D366; color:#fff; }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span class="topbar-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+        Open 24 hours
+      </span>
+      <span class="topbar-item topbar-hide-mobile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Legetafo, MNS
+      </span>
+    </div>
+    <div class="topbar-item">
+      <a href="tel:+251913915327" aria-label="Call FROMI">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="display:inline;vertical-align:-2px;margin-right:6px" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+        0913 915 327
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="#main" class="brand" aria-label="FROMI home">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="46" height="46" rx="8" fill="#E8501E"/>
+        <path d="M11 30h2.4l1.6-6.2a3 3 0 0 1 2.9-2.3h11.4a3 3 0 0 1 2.9 2.3L33.8 30H36" stroke="#0A1220" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="10" y="30" width="27" height="5.4" rx="2" stroke="#0A1220" stroke-width="2.2"/>
+        <circle cx="15.5" cy="35.6" r="2.6" fill="#0A1220"/>
+        <circle cx="32" cy="35.6" r="2.6" fill="#0A1220"/>
+        <path d="M17 22.5h13" stroke="#0A1220" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      FROMI
+      <small>AUTO REPAIR &amp; MAINTENANCE</small>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <span class="call-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+        <a href="tel:+251913915327">0913 915 327</a>
+      </span>
+      <a href="#contact" class="btn btn-primary">Get a quote</a>
+      <button class="menu-btn" id="menuOpen" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="top-row">
+    <button class="menu-btn" id="menuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <a href="#home" class="link">Home</a>
+  <a href="#services" class="link">Services</a>
+  <a href="#about" class="link">About</a>
+  <a href="#testimonials" class="link">Reviews</a>
+  <a href="#contact" class="link">Contact</a>
+  <div class="cta-row">
+    <a href="tel:+251913915327" class="btn btn-outline-dark btn-block">Call 0913 915 327</a>
+    <a href="#contact" class="btn btn-primary btn-block">Get a quote</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="home" style="padding-top:0;">
+    <div class="container hero-grid" style="padding-top:64px;">
+      <div class="hero-anim">
+        <span class="eyebrow-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Trusted local workshop &middot; open 24 hours
+        </span>
+        <h1>Keep your car running strong, day <span class="accent">or</span> night.</h1>
+        <p class="lead">FROMI is a full-service auto repair and maintenance workshop in Legetafo. From diagnostics to brakes, batteries and A/C — our mechanics get you back on the road, fast and done right.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary btn-lg">Request service</a>
+          <a href="tel:+251913915327" class="btn btn-outline-dark btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+            Call now
+          </a>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <svg viewBox="0 0 460 340" fill="none">
+          <ellipse cx="230" cy="300" rx="190" ry="18" fill="#000" opacity="0.28"/>
+          <path d="M55 235c0-14 10-26 24-30l34-10 26-38c8-12 22-19 36-19h70c15 0 29 8 37 21l24 39 30 8c15 4 25 17 25 33v20a14 14 0 0 1-14 14H69a14 14 0 0 1-14-14v-24Z" fill="#182642" stroke="#3A4560" stroke-width="2"/>
+          <path d="M139 165h182l18 32H121l18-32Z" fill="#0A1220"/>
+          <path d="M163 165c0-20 16-35 35-35h44c19 0 35 15 35 35" stroke="#E8501E" stroke-width="3" stroke-linecap="round"/>
+          <rect x="176" y="140" width="108" height="26" rx="4" fill="#101C30" stroke="#3A4560" stroke-width="1.5"/>
+          <circle cx="140" cy="257" r="34" fill="#0A1220" stroke="#3A4560" stroke-width="3"/>
+          <circle cx="140" cy="257" r="14" fill="#3A4560"/>
+          <circle cx="320" cy="257" r="34" fill="#0A1220" stroke="#3A4560" stroke-width="3"/>
+          <circle cx="320" cy="257" r="14" fill="#3A4560"/>
+          <rect x="55" y="222" width="350" height="10" fill="#E8501E" opacity="0.85"/>
+          <circle cx="380" cy="120" r="26" fill="none" stroke="#E8501E" stroke-width="3"/>
+          <path d="M380 96v10M380 134v10M356 120h10M394 120h10M363 103l7 7M390 130l7 7M397 103l-7 7M370 130l-7 7" stroke="#E8501E" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="stat-strip">
+      <div class="container">
+        <div class="stat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 6a4 4 0 1 1-4 4"/><path d="M4 20l6-6M10 10l4-4 6 6-4 4Z"/></svg>
+          <span>Fluid exchange</span>
+        </div>
+        <div class="stat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="8" width="15" height="10" rx="1.5"/><path d="M18 11h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2"/><path d="M7 8V6M11 8V6"/></svg>
+          <span>Battery repairs</span>
+        </div>
+        <div class="stat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v3M12 18v3M4.2 4.2l2 2M17.8 17.8l2 2M3 12h3M18 12h3M4.2 19.8l2-2M17.8 6.2l2-2"/><circle cx="12" cy="12" r="4"/></svg>
+          <span>A/C recharge</span>
+        </div>
+        <div class="stat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span>Diagnostics</span>
+        </div>
+        <div class="stat-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 1.4 1.4l1.6-1.6a1 1 0 0 0 0-1.4l-2.4-2.4a1 1 0 0 0-1.4 0L12.3 3.7a1 1 0 0 0 0 1.4"/><path d="M3 21l7-7M10 14l1.5-1.5a4 4 0 0 1 5.7 0l.3.3a4 4 0 0 1 0 5.7L16 20"/></svg>
+          <span>Restart &amp; repairs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-art">
+        <svg viewBox="0 0 380 300" fill="none" aria-hidden="true">
+          <rect x="10" y="10" width="360" height="280" rx="4" fill="#0D1A2E"/>
+          <path d="M60 190c0-10 8-19 18-22l22-7 18-26c6-9 16-14 26-14h50c11 0 21 6 27 15l17 27 22 6c11 3 18 12 18 24v14a10 10 0 0 1-10 10H70a10 10 0 0 1-10-10v-17Z" fill="#182642" stroke="#3A4560" stroke-width="2"/>
+          <circle cx="105" cy="204" r="22" fill="#0A1220" stroke="#E8501E" stroke-width="3"/>
+          <circle cx="255" cy="204" r="22" fill="#0A1220" stroke="#E8501E" stroke-width="3"/>
+          <rect x="150" y="150" width="80" height="20" rx="3" fill="#101C30" stroke="#3A4560"/>
+          <path d="M120 60l-14 30M260 60l14 30" stroke="#3A4560" stroke-width="3" stroke-linecap="round"/>
+          <rect x="130" y="46" width="120" height="14" rx="7" fill="#E8501E"/>
+        </svg>
+        <div class="about-badge">10+<br><span style="font-family:var(--font-body); font-weight:500; font-size:11px;">services offered</span></div>
+      </div>
+      <div>
+        <span class="kicker">Who we are</span>
+        <h2>Straightforward car care, from mechanics who know your engine.</h2>
+        <p style="margin-top:18px; font-size:15.5px; line-height:1.75; color:var(--steel-500); max-width:56ch;">We're a hands-on repair shop that treats every vehicle like it's the only one in the bay. No guesswork, no upselling — just a clear diagnosis, honest timelines, and work done properly the first time.</p>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg> Full-service repair, from routine checks to major work</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg> Genuine parts and materials for every job</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg> Clear pricing explained before we start</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg> Open 24 hours for urgent breakdowns</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-ink" style="margin-top:30px;">Talk to a mechanic</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="on-paper2">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Our services</span>
+        <h2>Excellence in automotive services</h2>
+        <p>A workshop that covers the essentials and the tricky jobs — ask FROMI what your vehicle needs and we'll take it from there.</p>
+      </div>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 1.4 1.4l1.6-1.6a1 1 0 0 0 0-1.4l-2.4-2.4a1 1 0 0 0-1.4 0L12.3 3.7a1 1 0 0 0 0 1.4"/><path d="M3 21l7-7M10 14l1.5-1.5a4 4 0 0 1 5.7 0l.3.3a4 4 0 0 1 0 5.7L16 20"/></svg></div>
+          <h3>Engine diagnostics</h3>
+          <p>Full computer diagnostic scan to trace the exact cause of a warning light, stall, or rough idle.</p>
+          <a href="#contact" class="more">Ask for this service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>Brake &amp; fluid service</h3>
+          <p>Brake pad and fluid checks, plus full fluid exchange to keep every system running clean.</p>
+          <a href="#contact" class="more">Ask for this service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="8" width="15" height="10" rx="1.5"/><path d="M18 11h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2"/><path d="M7 8V6M11 8V6"/></svg></div>
+          <h3>Battery repair &amp; replacement</h3>
+          <p>Testing, charging, and replacement so your car starts reliably every time — day or night.</p>
+          <a href="#contact" class="more">Ask for this service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v3M12 18v3M4.2 4.2l2 2M17.8 17.8l2 2M3 12h3M18 12h3M4.2 19.8l2-2M17.8 6.2l2-2"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3>A/C recharge &amp; repair</h3>
+          <p>Diagnose weak or warm airflow and recharge your system so it blows cold again.</p>
+          <a href="#contact" class="more">Ask for this service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2 2M17 17l2 2M4.9 19.1l2-2M17 7l2-2"/></svg></div>
+          <h3>Engine tune-up</h3>
+          <p>Spark plugs, filters and belts checked and refreshed to keep performance smooth.</p>
+          <a href="#contact" class="more">Ask for this service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M4 5h2l2.4 11h9.2l1.9-7H8"/></svg></div>
+          <h3>General maintenance</h3>
+          <p>Oil changes, tire checks, and the routine care that keeps small issues from becoming big ones.</p>
+          <a href="#contact" class="more">Ask for this service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="on-dark">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Why FROMI</span>
+        <h2>What working with our shop is like</h2>
+        <p>The details that matter once your car is actually up on the lift.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><h4>Honest diagnosis first</h4><p>We explain what's actually wrong before any work starts, in plain language.</p></div>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z"/></svg>
+          <div><h4>Reliable, repeat-tested work</h4><p>Every repair is checked before your car leaves the bay.</p></div>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <div><h4>Open around the clock</h4><p>Breakdowns don't wait for business hours, and neither do we.</p></div>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+          <div><h4>Clear quotes, no surprises</h4><p>You approve the cost before we touch a single part.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">How it works</span>
+        <h2>From first call to driving off</h2>
+      </div>
+      <div class="process-row">
+        <div class="process-step">
+          <h4>Reach out</h4>
+          <p>Call, message, or send the form below with your vehicle and the issue.</p>
+        </div>
+        <div class="process-step">
+          <h4>Diagnosis</h4>
+          <p>We inspect the vehicle and walk you through what's wrong and what it'll take.</p>
+        </div>
+        <div class="process-step">
+          <h4>Approved repair</h4>
+          <p>Once you approve the quote, our mechanics get to work.</p>
+        </div>
+        <div class="process-step">
+          <h4>Back on the road</h4>
+          <p>We test the fix before handoff, so you drive away with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="on-paper2">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Customer reviews</span>
+        <h2>What customers will say</h2>
+        <p>Real reviews will replace these placeholders as they come in.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          </div>
+          <p class="testi-quote">"[Customer testimonial goes here]"</p>
+          <p class="testi-name">— Dr. Getenet</p>
+        </div>
+        <div class="testi-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          </div>
+          <p class="testi-quote">"[Customer testimonial goes here]"</p>
+          <p class="testi-name">— [Customer name]</p>
+        </div>
+        <div class="testi-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          </div>
+          <p class="testi-quote">"[Customer testimonial goes here]"</p>
+          <p class="testi-name">— [Customer name]</p>
+        </div>
+      </div>
+      <p class="placeholder-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        Star ratings shown are placeholders and will be replaced once genuine customer reviews are collected.
+      </p>
+    </div>
+  </section>
+
+  <!-- OFFER BANNER -->
+  <section class="offer-banner">
+    <div class="container offer-inner">
+      <div class="offer-text">
+        <h2>Keep your vehicle running at its best</h2>
+        <p>Ask FROMI about our available maintenance and service packages.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-lg">Get a service quote</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="on-dark">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Get in touch</span>
+        <h2>Ready to get your vehicle back on the road?</h2>
+        <p>Send us your details and our team will follow up to confirm your appointment.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="form-card">
+          <form id="serviceForm" novalidate>
+            <div class="form-row two">
+              <div class="field">
+                <label for="fullName">Full name</label>
+                <input type="text" id="fullName" name="fullName" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-row two">
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="vehicle">Vehicle make &amp; model</label>
+                <input type="text" id="vehicle" name="vehicle" placeholder="e.g. Toyota Corolla 2016" required>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div class="field">
+                <label for="serviceType">Service needed</label>
+                <select id="serviceType" name="serviceType" required>
+                  <option value="">Select a service</option>
+                  <option>Engine diagnostics</option>
+                  <option>Brake &amp; fluid service</option>
+                  <option>Battery repair &amp; replacement</option>
+                  <option>A/C recharge &amp; repair</option>
+                  <option>Engine tune-up</option>
+                  <option>General maintenance</option>
+                  <option>Other / not sure</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="prefDate">Preferred date</label>
+                <input type="date" id="prefDate" name="prefDate">
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us more about the issue..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Request service</button>
+            <div class="form-msg" id="formMsg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+              <span>Thanks — your request is ready. Confirm sending it from your email app, or call/WhatsApp us directly for a faster reply.</span>
+            </div>
+          </form>
+        </div>
+
+        <div class="info-col">
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+            <div><h4>Phone</h4><p><a href="tel:+251913915327">0913 915 327</a></p></div>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><h4>Location</h4><p>Legetafo, MNS</p></div>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <div><h4>Email</h4><p><a href="mailto:fromi3703@gmail.com">fromi3703@gmail.com</a></p></div>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            <div><h4>Hours</h4><p>Open 24 hours</p></div>
+          </div>
+
+          <div class="map-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Map preview placeholder — connect your Google Maps location to show it here.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="46" height="46" rx="8" fill="#E8501E"/>
+            <path d="M11 30h2.4l1.6-6.2a3 3 0 0 1 2.9-2.3h11.4a3 3 0 0 1 2.9 2.3L33.8 30H36" stroke="#0A1220" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="10" y="30" width="27" height="5.4" rx="2" stroke="#0A1220" stroke-width="2.2"/>
+            <circle cx="15.5" cy="35.6" r="2.6" fill="#0A1220"/>
+            <circle cx="32" cy="35.6" r="2.6" fill="#0A1220"/>
+            <path d="M17 22.5h13" stroke="#0A1220" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          FROMI
+        </div>
+        <p class="footer-desc">Professional automotive repair and maintenance.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook (coming soon)" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1Z"/></svg></a>
+          <a href="#" aria-label="Instagram (coming soon)" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="#" aria-label="TikTok (coming soon)" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M15 3c0 3 2 5 5 5"/></svg></a>
+          <a href="#" aria-label="Telegram (coming soon)" title="Coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 4-19 8 6 2 2 6 3-4 5 3 3-15Z"/></svg></a>
+          <a href="https://wa.me/251913915327" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-14.6-4.6L4 20l4.7-1.3A8 8 0 0 1 20 12Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Reach us</h5>
+        <ul class="footer-links">
+          <li><a href="tel:+251913915327">0913 915 327</a></li>
+          <li><a href="mailto:fromi3703@gmail.com">fromi3703@gmail.com</a></li>
+          <li>Legetafo, MNS</li>
+          <li>Open 24 hours</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> FROMI. All rights reserved.</span>
+      <span>Built with care for drivers who need a shop they can trust.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-stack">
+  <a href="https://wa.me/251913915327" class="fab fab-whatsapp" aria-label="Message FROMI on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 12a8 8 0 1 1-14.6-4.6L4 20l4.7-1.3A8 8 0 0 1 20 12Zm-8-6a6 6 0 0 0-5.1 9.2l.2.4-.9 3.2 3.3-.9.4.2A6 6 0 1 0 12 6Zm3.4 7.6c-.2.5-1 1-1.5 1-.4.1-.9.1-1.4-.1-.3-.1-.7-.3-1.3-.6-2.2-1-3.6-3.2-3.7-3.3-.1-.2-.9-1.1-.9-2.2s.6-1.5.8-1.8c.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.3.2.4.6 1.4.6 1.5.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.2.1.4.1.5-.1.2-.2.6-.7.8-.9.2-.2.3-.2.5-.1l1.4.7c.2.1.3.2.4.3.1.2.1.7-.1 1.2Z"/></svg>
+  </a>
+  <a href="tel:+251913915327" class="fab fab-call" aria-label="Call FROMI">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+  </a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var menuOpen = document.getElementById('menuOpen');
+  var menuClose = document.getElementById('menuClose');
+  var mobileNav = document.getElementById('mobileNav');
+
+  function openMenu(){
+    mobileNav.classList.add('open');
+    menuOpen.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+  }
+  function closeMenu(){
+    mobileNav.classList.remove('open');
+    menuOpen.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  }
+  menuOpen.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  mobileNav.querySelectorAll('a.link').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+
+  var form = document.getElementById('serviceForm');
+  var formMsg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    var data = new FormData(form);
+    var lines = [
+      'Name: ' + data.get('fullName'),
+      'Phone: ' + data.get('phone'),
+      'Email: ' + (data.get('email') || '-'),
+      'Vehicle: ' + data.get('vehicle'),
+      'Service needed: ' + data.get('serviceType'),
+      'Preferred date: ' + (data.get('prefDate') || '-'),
+      'Message: ' + (data.get('message') || '-')
+    ];
+    var subject = encodeURIComponent('Service request from ' + data.get('fullName'));
+    var body = encodeURIComponent(lines.join('\n'));
+    window.location.href = 'mailto:fromi3703@gmail.com?subject=' + subject + '&body=' + body;
+    formMsg.classList.add('show');
+  });
+</script>
+
+</body>
+</html>
